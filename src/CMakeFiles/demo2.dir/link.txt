@@ -1,0 +1,1 @@
+aarch64-linux-gnu-g++-10    -rdynamic CMakeFiles/demo2.dir/lcd.cpp.o CMakeFiles/demo2.dir/lcd_init.cpp.o CMakeFiles/demo2.dir/main.cpp.o  -o demo2  -lpthread -lwiringPi -lrt -lcrypt 

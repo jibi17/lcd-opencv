@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/ht/code/cross_make/build",
+  "command": "/usr/bin/aarch64-linux-gnu-g++-10   -I/home/ht/code/cross_make/inc  -g   -o CMakeFiles/demo2.dir/main.cpp.o -c /home/ht/code/cross_make/main.cpp",
+  "file": "/home/ht/code/cross_make/main.cpp"
+}
+]

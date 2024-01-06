@@ -1,0 +1,5 @@
+/home/ht/code/cross_make/build/CMakeFiles/rebuild_cache.dir
+/home/ht/code/cross_make/build/CMakeFiles/edit_cache.dir
+/home/ht/code/cross_make/build/src/CMakeFiles/rebuild_cache.dir
+/home/ht/code/cross_make/build/src/CMakeFiles/edit_cache.dir
+/home/ht/code/cross_make/build/src/CMakeFiles/demo2.dir

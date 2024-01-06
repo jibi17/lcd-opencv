@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ht/code/cross_make/main.cpp
+iostream
+-
+./wiringOP/wiringPi/wiringPi.h
+/home/ht/code/cross_make/wiringOP/wiringPi/wiringPi.h
+pthread.h
+/home/ht/code/cross_make/pthread.h
+
+/home/ht/code/cross_make/wiringOP/wiringPi/wiringPi.h
+
