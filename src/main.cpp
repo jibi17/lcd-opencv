@@ -43,9 +43,12 @@ int main(int argc, char **args)
 	LCD_Fill2(0,0,LCD_W,LCD_H,WHITE);
 	delay(100);
 	LCD_ShowPicture2(0,0,160,76,gImage_boran_lcd);
+	std::cout << "deploy test\n";
+
 	int i=40;
 	while (1)
 	{
+		std::cout << "deploy test\n";
 		sleep(1);
 		// for(int i=200;i>20;i=i-10)
 		// {

@@ -43,58 +43,58 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ht/code/lcd+opencv
+CMAKE_SOURCE_DIR = /home/ht/code/git_learn/lcd-opencv/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ht/code/lcd+opencv
+CMAKE_BINARY_DIR = /home/ht/code/git_learn/lcd-opencv/src
 
 # Include any dependencies generated for this target.
-include src/CMakeFiles/demo2.dir/depend.make
+include CMakeFiles/demo2.dir/depend.make
 
 # Include the progress variables for this target.
-include src/CMakeFiles/demo2.dir/progress.make
+include CMakeFiles/demo2.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include src/CMakeFiles/demo2.dir/flags.make
+include CMakeFiles/demo2.dir/flags.make
 
-src/CMakeFiles/demo2.dir/lcd.cpp.o: src/CMakeFiles/demo2.dir/flags.make
-src/CMakeFiles/demo2.dir/lcd.cpp.o: src/lcd.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ht/code/lcd+opencv/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/demo2.dir/lcd.cpp.o"
-	cd /home/ht/code/lcd+opencv/src && aarch64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo2.dir/lcd.cpp.o -c /home/ht/code/lcd+opencv/src/lcd.cpp
+CMakeFiles/demo2.dir/lcd.cpp.o: CMakeFiles/demo2.dir/flags.make
+CMakeFiles/demo2.dir/lcd.cpp.o: lcd.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ht/code/git_learn/lcd-opencv/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/demo2.dir/lcd.cpp.o"
+	aarch64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo2.dir/lcd.cpp.o -c /home/ht/code/git_learn/lcd-opencv/src/lcd.cpp
 
-src/CMakeFiles/demo2.dir/lcd.cpp.i: cmake_force
+CMakeFiles/demo2.dir/lcd.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/demo2.dir/lcd.cpp.i"
-	cd /home/ht/code/lcd+opencv/src && aarch64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ht/code/lcd+opencv/src/lcd.cpp > CMakeFiles/demo2.dir/lcd.cpp.i
+	aarch64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ht/code/git_learn/lcd-opencv/src/lcd.cpp > CMakeFiles/demo2.dir/lcd.cpp.i
 
-src/CMakeFiles/demo2.dir/lcd.cpp.s: cmake_force
+CMakeFiles/demo2.dir/lcd.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo2.dir/lcd.cpp.s"
-	cd /home/ht/code/lcd+opencv/src && aarch64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ht/code/lcd+opencv/src/lcd.cpp -o CMakeFiles/demo2.dir/lcd.cpp.s
+	aarch64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ht/code/git_learn/lcd-opencv/src/lcd.cpp -o CMakeFiles/demo2.dir/lcd.cpp.s
 
-src/CMakeFiles/demo2.dir/lcd_init.cpp.o: src/CMakeFiles/demo2.dir/flags.make
-src/CMakeFiles/demo2.dir/lcd_init.cpp.o: src/lcd_init.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ht/code/lcd+opencv/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/demo2.dir/lcd_init.cpp.o"
-	cd /home/ht/code/lcd+opencv/src && aarch64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo2.dir/lcd_init.cpp.o -c /home/ht/code/lcd+opencv/src/lcd_init.cpp
+CMakeFiles/demo2.dir/lcd_init.cpp.o: CMakeFiles/demo2.dir/flags.make
+CMakeFiles/demo2.dir/lcd_init.cpp.o: lcd_init.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ht/code/git_learn/lcd-opencv/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/demo2.dir/lcd_init.cpp.o"
+	aarch64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo2.dir/lcd_init.cpp.o -c /home/ht/code/git_learn/lcd-opencv/src/lcd_init.cpp
 
-src/CMakeFiles/demo2.dir/lcd_init.cpp.i: cmake_force
+CMakeFiles/demo2.dir/lcd_init.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/demo2.dir/lcd_init.cpp.i"
-	cd /home/ht/code/lcd+opencv/src && aarch64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ht/code/lcd+opencv/src/lcd_init.cpp > CMakeFiles/demo2.dir/lcd_init.cpp.i
+	aarch64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ht/code/git_learn/lcd-opencv/src/lcd_init.cpp > CMakeFiles/demo2.dir/lcd_init.cpp.i
 
-src/CMakeFiles/demo2.dir/lcd_init.cpp.s: cmake_force
+CMakeFiles/demo2.dir/lcd_init.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo2.dir/lcd_init.cpp.s"
-	cd /home/ht/code/lcd+opencv/src && aarch64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ht/code/lcd+opencv/src/lcd_init.cpp -o CMakeFiles/demo2.dir/lcd_init.cpp.s
+	aarch64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ht/code/git_learn/lcd-opencv/src/lcd_init.cpp -o CMakeFiles/demo2.dir/lcd_init.cpp.s
 
-src/CMakeFiles/demo2.dir/main.cpp.o: src/CMakeFiles/demo2.dir/flags.make
-src/CMakeFiles/demo2.dir/main.cpp.o: src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ht/code/lcd+opencv/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/demo2.dir/main.cpp.o"
-	cd /home/ht/code/lcd+opencv/src && aarch64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo2.dir/main.cpp.o -c /home/ht/code/lcd+opencv/src/main.cpp
+CMakeFiles/demo2.dir/main.cpp.o: CMakeFiles/demo2.dir/flags.make
+CMakeFiles/demo2.dir/main.cpp.o: main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ht/code/git_learn/lcd-opencv/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/demo2.dir/main.cpp.o"
+	aarch64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo2.dir/main.cpp.o -c /home/ht/code/git_learn/lcd-opencv/src/main.cpp
 
-src/CMakeFiles/demo2.dir/main.cpp.i: cmake_force
+CMakeFiles/demo2.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/demo2.dir/main.cpp.i"
-	cd /home/ht/code/lcd+opencv/src && aarch64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ht/code/lcd+opencv/src/main.cpp > CMakeFiles/demo2.dir/main.cpp.i
+	aarch64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ht/code/git_learn/lcd-opencv/src/main.cpp > CMakeFiles/demo2.dir/main.cpp.i
 
-src/CMakeFiles/demo2.dir/main.cpp.s: cmake_force
+CMakeFiles/demo2.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo2.dir/main.cpp.s"
-	cd /home/ht/code/lcd+opencv/src && aarch64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ht/code/lcd+opencv/src/main.cpp -o CMakeFiles/demo2.dir/main.cpp.s
+	aarch64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ht/code/git_learn/lcd-opencv/src/main.cpp -o CMakeFiles/demo2.dir/main.cpp.s
 
 # Object files for target demo2
 demo2_OBJECTS = \
@@ -105,24 +105,24 @@ demo2_OBJECTS = \
 # External object files for target demo2
 demo2_EXTERNAL_OBJECTS =
 
-src/demo2: src/CMakeFiles/demo2.dir/lcd.cpp.o
-src/demo2: src/CMakeFiles/demo2.dir/lcd_init.cpp.o
-src/demo2: src/CMakeFiles/demo2.dir/main.cpp.o
-src/demo2: src/CMakeFiles/demo2.dir/build.make
-src/demo2: src/CMakeFiles/demo2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ht/code/lcd+opencv/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable demo2"
-	cd /home/ht/code/lcd+opencv/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/demo2.dir/link.txt --verbose=$(VERBOSE)
+demo2: CMakeFiles/demo2.dir/lcd.cpp.o
+demo2: CMakeFiles/demo2.dir/lcd_init.cpp.o
+demo2: CMakeFiles/demo2.dir/main.cpp.o
+demo2: CMakeFiles/demo2.dir/build.make
+demo2: CMakeFiles/demo2.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ht/code/git_learn/lcd-opencv/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable demo2"
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/demo2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-src/CMakeFiles/demo2.dir/build: src/demo2
+CMakeFiles/demo2.dir/build: demo2
 
-.PHONY : src/CMakeFiles/demo2.dir/build
+.PHONY : CMakeFiles/demo2.dir/build
 
-src/CMakeFiles/demo2.dir/clean:
-	cd /home/ht/code/lcd+opencv/src && $(CMAKE_COMMAND) -P CMakeFiles/demo2.dir/cmake_clean.cmake
-.PHONY : src/CMakeFiles/demo2.dir/clean
+CMakeFiles/demo2.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/demo2.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/demo2.dir/clean
 
-src/CMakeFiles/demo2.dir/depend:
-	cd /home/ht/code/lcd+opencv && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ht/code/lcd+opencv /home/ht/code/lcd+opencv/src /home/ht/code/lcd+opencv /home/ht/code/lcd+opencv/src /home/ht/code/lcd+opencv/src/CMakeFiles/demo2.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : src/CMakeFiles/demo2.dir/depend
+CMakeFiles/demo2.dir/depend:
+	cd /home/ht/code/git_learn/lcd-opencv/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ht/code/git_learn/lcd-opencv/src /home/ht/code/git_learn/lcd-opencv/src /home/ht/code/git_learn/lcd-opencv/src /home/ht/code/git_learn/lcd-opencv/src /home/ht/code/git_learn/lcd-opencv/src/CMakeFiles/demo2.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/demo2.dir/depend
 

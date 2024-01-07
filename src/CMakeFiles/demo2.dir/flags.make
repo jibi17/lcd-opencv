@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ht/code/lcd+opencv/src/../inc 
+CXX_INCLUDES = -I/home/ht/code/git_learn/lcd-opencv/src/../inc 
 
