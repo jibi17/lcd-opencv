@@ -16,28 +16,6 @@ iostream
 stdint.h
 -
 
-/home/ht/code/git_learn/lcd-opencv/src/lcd.cpp
-lcd.h
-/home/ht/code/git_learn/lcd-opencv/src/lcd.h
-lcd_init.h
-/home/ht/code/git_learn/lcd-opencv/src/lcd_init.h
-lcdfont.h
-/home/ht/code/git_learn/lcd-opencv/src/lcdfont.h
-string.h
--
-
-/home/ht/code/git_learn/lcd-opencv/src/lcd_init.cpp
-../inc/lcd_init.h
-/home/ht/code/git_learn/lcd-opencv/inc/lcd_init.h
-iostream
-/home/ht/code/git_learn/lcd-opencv/src/iostream
-stdio.h
--
-stdlib.h
--
-string.h
--
-
 /home/ht/code/git_learn/lcd-opencv/src/main.cpp
 iostream
 -
@@ -65,32 +43,24 @@ unistd.h
 -
 socket.hpp
 /home/ht/code/git_learn/lcd-opencv/src/socket.hpp
-
-/home/ht/code/git_learn/lcd-opencv/src/socket.cpp
-socket.hpp
-/home/ht/code/git_learn/lcd-opencv/src/socket.hpp
+image.h
+/home/ht/code/git_learn/lcd-opencv/src/image.h
+fstream
+-
+vector
+-
 
 /home/ht/code/git_learn/lcd-opencv/wiringOP/wiringPi/wiringPi.h
 
 /home/ht/code/git_learn/lcd-opencv/wiringOP/wiringPi/wiringPiSPI.h
 
+inc/image.h
+stdint.h
+-
+
 inc/lcd.h
 stdio.h
 inc/stdio.h
-stdint.h
--
-
-inc/lcd_init.h
-iostream
--
-../wiringOP/wiringPi/wiringPi.h
-wiringOP/wiringPi/wiringPi.h
-../wiringOP/wiringPi/wiringPiSPI.h
-wiringOP/wiringPi/wiringPiSPI.h
-stdint.h
--
-
-inc/lcdfont.h
 stdint.h
 -
 
@@ -109,8 +79,4 @@ unistd.h
 -
 arpa/inet.h
 -
-
-wiringOP/wiringPi/wiringPi.h
-
-wiringOP/wiringPi/wiringPiSPI.h
 

@@ -18,6 +18,7 @@ src/CMakeFiles/demo2.dir/main.cpp.o
  /home/ht/code/git_learn/lcd-opencv/src/main.cpp
  /home/ht/code/git_learn/lcd-opencv/wiringOP/wiringPi/wiringPi.h
  /home/ht/code/git_learn/lcd-opencv/wiringOP/wiringPi/wiringPiSPI.h
+ inc/image.h
  inc/lcd.h
  inc/pic.h
  inc/socket.hpp

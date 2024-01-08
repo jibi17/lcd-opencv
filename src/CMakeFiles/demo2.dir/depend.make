@@ -17,6 +17,7 @@ src/CMakeFiles/demo2.dir/main.cpp.o: inc/lcd_init.h
 src/CMakeFiles/demo2.dir/main.cpp.o: src/main.cpp
 src/CMakeFiles/demo2.dir/main.cpp.o: wiringOP/wiringPi/wiringPi.h
 src/CMakeFiles/demo2.dir/main.cpp.o: wiringOP/wiringPi/wiringPiSPI.h
+src/CMakeFiles/demo2.dir/main.cpp.o: inc/image.h
 src/CMakeFiles/demo2.dir/main.cpp.o: inc/lcd.h
 src/CMakeFiles/demo2.dir/main.cpp.o: inc/pic.h
 src/CMakeFiles/demo2.dir/main.cpp.o: inc/socket.hpp
