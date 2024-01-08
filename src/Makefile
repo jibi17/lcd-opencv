@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ht/code/git_learn/lcd-opencv/src
+CMAKE_SOURCE_DIR = /home/ht/code/git_learn/lcd-opencv
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ht/code/git_learn/lcd-opencv/src
+CMAKE_BINARY_DIR = /home/ht/code/git_learn/lcd-opencv
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ht/code/git_learn/lcd-opencv/src/CMakeFiles /home/ht/code/git_learn/lcd-opencv/src/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ht/code/git_learn/lcd-opencv/src/CMakeFiles 0
+	cd /home/ht/code/git_learn/lcd-opencv && $(CMAKE_COMMAND) -E cmake_progress_start /home/ht/code/git_learn/lcd-opencv/CMakeFiles /home/ht/code/git_learn/lcd-opencv/src/CMakeFiles/progress.marks
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ht/code/git_learn/lcd-opencv/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,30 +97,32 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ht/code/git_learn/lcd-opencv && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named demo2
+# Convenience name for target.
+src/CMakeFiles/demo2.dir/rule:
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/demo2.dir/rule
+.PHONY : src/CMakeFiles/demo2.dir/rule
 
-# Build rule for target.
-demo2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 demo2
+# Convenience name for target.
+demo2: src/CMakeFiles/demo2.dir/rule
+
 .PHONY : demo2
 
 # fast build rule for target.
 demo2/fast:
-	$(MAKE) -f CMakeFiles/demo2.dir/build.make CMakeFiles/demo2.dir/build
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/build
 .PHONY : demo2/fast
 
 lcd.o: lcd.cpp.o
@@ -129,7 +131,7 @@ lcd.o: lcd.cpp.o
 
 # target to build an object file
 lcd.cpp.o:
-	$(MAKE) -f CMakeFiles/demo2.dir/build.make CMakeFiles/demo2.dir/lcd.cpp.o
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/lcd.cpp.o
 .PHONY : lcd.cpp.o
 
 lcd.i: lcd.cpp.i
@@ -138,7 +140,7 @@ lcd.i: lcd.cpp.i
 
 # target to preprocess a source file
 lcd.cpp.i:
-	$(MAKE) -f CMakeFiles/demo2.dir/build.make CMakeFiles/demo2.dir/lcd.cpp.i
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/lcd.cpp.i
 .PHONY : lcd.cpp.i
 
 lcd.s: lcd.cpp.s
@@ -147,7 +149,7 @@ lcd.s: lcd.cpp.s
 
 # target to generate assembly for a file
 lcd.cpp.s:
-	$(MAKE) -f CMakeFiles/demo2.dir/build.make CMakeFiles/demo2.dir/lcd.cpp.s
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/lcd.cpp.s
 .PHONY : lcd.cpp.s
 
 lcd_init.o: lcd_init.cpp.o
@@ -156,7 +158,7 @@ lcd_init.o: lcd_init.cpp.o
 
 # target to build an object file
 lcd_init.cpp.o:
-	$(MAKE) -f CMakeFiles/demo2.dir/build.make CMakeFiles/demo2.dir/lcd_init.cpp.o
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/lcd_init.cpp.o
 .PHONY : lcd_init.cpp.o
 
 lcd_init.i: lcd_init.cpp.i
@@ -165,7 +167,7 @@ lcd_init.i: lcd_init.cpp.i
 
 # target to preprocess a source file
 lcd_init.cpp.i:
-	$(MAKE) -f CMakeFiles/demo2.dir/build.make CMakeFiles/demo2.dir/lcd_init.cpp.i
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/lcd_init.cpp.i
 .PHONY : lcd_init.cpp.i
 
 lcd_init.s: lcd_init.cpp.s
@@ -174,7 +176,7 @@ lcd_init.s: lcd_init.cpp.s
 
 # target to generate assembly for a file
 lcd_init.cpp.s:
-	$(MAKE) -f CMakeFiles/demo2.dir/build.make CMakeFiles/demo2.dir/lcd_init.cpp.s
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/lcd_init.cpp.s
 .PHONY : lcd_init.cpp.s
 
 main.o: main.cpp.o
@@ -183,7 +185,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/demo2.dir/build.make CMakeFiles/demo2.dir/main.cpp.o
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -192,7 +194,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/demo2.dir/build.make CMakeFiles/demo2.dir/main.cpp.i
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -201,8 +203,35 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/demo2.dir/build.make CMakeFiles/demo2.dir/main.cpp.s
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+socket.o: socket.cpp.o
+
+.PHONY : socket.o
+
+# target to build an object file
+socket.cpp.o:
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/socket.cpp.o
+.PHONY : socket.cpp.o
+
+socket.i: socket.cpp.i
+
+.PHONY : socket.i
+
+# target to preprocess a source file
+socket.cpp.i:
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/socket.cpp.i
+.PHONY : socket.cpp.i
+
+socket.s: socket.cpp.s
+
+.PHONY : socket.s
+
+# target to generate assembly for a file
+socket.cpp.s:
+	cd /home/ht/code/git_learn/lcd-opencv && $(MAKE) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/socket.cpp.s
+.PHONY : socket.cpp.s
 
 # Help Target
 help:
@@ -222,6 +251,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... socket.o"
+	@echo "... socket.i"
+	@echo "... socket.s"
 .PHONY : help
 
 
@@ -233,6 +265,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ht/code/git_learn/lcd-opencv && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

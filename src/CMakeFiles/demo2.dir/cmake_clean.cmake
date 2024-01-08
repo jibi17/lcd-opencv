@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/demo2.dir/lcd.cpp.o"
   "CMakeFiles/demo2.dir/lcd_init.cpp.o"
   "CMakeFiles/demo2.dir/main.cpp.o"
+  "CMakeFiles/demo2.dir/socket.cpp.o"
   "demo2"
   "demo2.pdb"
 )

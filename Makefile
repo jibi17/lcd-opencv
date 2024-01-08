@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ht/code/lcd+opencv
+CMAKE_SOURCE_DIR = /home/ht/code/git_learn/lcd-opencv
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ht/code/lcd+opencv
+CMAKE_BINARY_DIR = /home/ht/code/git_learn/lcd-opencv
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ht/code/lcd+opencv/CMakeFiles /home/ht/code/lcd+opencv/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ht/code/git_learn/lcd-opencv/CMakeFiles /home/ht/code/git_learn/lcd-opencv/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ht/code/lcd+opencv/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ht/code/git_learn/lcd-opencv/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
