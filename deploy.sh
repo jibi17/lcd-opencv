@@ -6,3 +6,4 @@
 # 远程执行命令（更改文件权限）
 #ssh orangepi@192.168.10.135 'chmod +x /home/orangepi/code/lcd_1.47/demo2'
 chmod +x ./demo2
+sudo ./demo2

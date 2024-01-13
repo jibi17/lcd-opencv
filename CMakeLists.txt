@@ -7,7 +7,7 @@ project(demo2)
 #add_subdirectory(print)
 
 add_subdirectory(src)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../)
+
 # add_executable(demo2 main.cpp ${SRC_LIST})
 
 

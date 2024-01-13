@@ -18,14 +18,15 @@
 #define SPI_CHAN 4
 //#define IN_PIN 8
 uint8_t temp[4096];
-
+uint8_t image2[110080];
 //这个是第二个版本
 //这个是第三个版本
+using namespace std;
 int main(int argc, char **args)
 {
 	
 	std::cout << "Hello, world!1\n";
-    cv::waitKey(0);
+    
 	
 	wiringPiSetup();
 
@@ -34,8 +35,45 @@ int main(int argc, char **args)
 	LCD_Fill2(0,0,LCD_W,LCD_H,WHITE);
 	delay(100);
 
-	LCD_ShowPicture2(0,0,320,172,image);
-	
+    cv::Mat originalImage = cv::imread("./wallpaper.jpg");
+
+    if (originalImage.empty()) {
+        std::cerr << "Error loading image." << std::endl;
+        return (-1);
+    }
+
+    // 缩放图像为320x172
+    cv::Mat resizedImage;
+    cv::resize(originalImage, resizedImage, cv::Size(320, 172));
+    //cv::imshow("Resized RGB565 Image", resizedImage);
+    
+    //转换为RGB565格式
+    cv::Mat rgb565Image;
+    cv::cvtColor(resizedImage, rgb565Image, cv::COLOR_BGR2BGR565);
+    // 获取图像的宽度和高度
+    int width = rgb565Image.cols;
+    int height = rgb565Image.rows;
+    cout<<"wideth:"<<width<<endl;
+    cout<<"height:"<<height<<endl;
+    //int width = imageWidth;
+    //int height = imageHeight;
+    // 遍历图像像素并写入数组
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            // 获取RGB565值
+            uint16_t rgb565Value = rgb565Image.at<uint16_t>(y, x);
+
+            // 分开高位和低位，并写入数组
+            uint8_t highByte = (rgb565Value >> 8) & 0xFF;
+            uint8_t lowByte = rgb565Value & 0xFF;
+            image2[(y * width + x) * 2]=highByte;
+            image2[(y * width + x) * 2 + 1]=lowByte;
+            // outputArray << "0X" << std::hex << std::uppercase << static_cast<int>(highByte) << ",";
+            // outputArray << "0X" << std::hex << std::uppercase << static_cast<int>(lowByte) << ",";
+        }
+    }
+	LCD_ShowPicture2(0,0,320,172,image2);
+	delay(200);
 	// const char* filename = "./image.h";
 
     // // 打开文件

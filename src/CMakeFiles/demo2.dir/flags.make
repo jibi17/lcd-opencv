@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/orangepi/code/lcd-opencv/src/../inc -I/home/orangepi/code/lcd-opencv/src/../inc/opencv2
+CXX_INCLUDES = -I/home/orangepi/code/lcd-opencv/src/../inc -isystem /usr/local/include/opencv4
 
 CXX_FLAGS = 
 
