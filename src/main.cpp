@@ -14,6 +14,7 @@
 #include "image.h"
 #include <fstream>
 #include <vector>
+#include "opencv2/opencv.hpp"
 #define SPI_CHAN 4
 //#define IN_PIN 8
 uint8_t temp[4096];
@@ -22,8 +23,10 @@ uint8_t temp[4096];
 //这个是第三个版本
 int main(int argc, char **args)
 {
-
+	
 	std::cout << "Hello, world!1\n";
+    cv::waitKey(0);
+	
 	wiringPiSetup();
 
 

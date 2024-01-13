@@ -1,12 +1,13 @@
 cmake_minimum_required(VERSION 3.0.0)
-SET(CMAKE_C_COMPILER aarch64-linux-gnu-gcc-10)
+#SET(CMAKE_C_COMPILER aarch64-linux-gnu-gcc-10)
 
-SET(CMAKE_CXX_COMPILER aarch64-linux-gnu-g++-10)
+#SET(CMAKE_CXX_COMPILER aarch64-linux-gnu-g++-10)
 
 project(demo2)
 #add_subdirectory(print)
 
 add_subdirectory(src)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../)
 # add_executable(demo2 main.cpp ${SRC_LIST})
 
 

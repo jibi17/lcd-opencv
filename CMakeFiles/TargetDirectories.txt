@@ -1,5 +1,5 @@
-/home/ht/code/git_learn/lcd-opencv/CMakeFiles/rebuild_cache.dir
-/home/ht/code/git_learn/lcd-opencv/CMakeFiles/edit_cache.dir
-/home/ht/code/git_learn/lcd-opencv/src/CMakeFiles/rebuild_cache.dir
-/home/ht/code/git_learn/lcd-opencv/src/CMakeFiles/edit_cache.dir
-/home/ht/code/git_learn/lcd-opencv/src/CMakeFiles/demo2.dir
+/home/orangepi/code/lcd-opencv/CMakeFiles/edit_cache.dir
+/home/orangepi/code/lcd-opencv/CMakeFiles/rebuild_cache.dir
+/home/orangepi/code/lcd-opencv/src/CMakeFiles/demo2.dir
+/home/orangepi/code/lcd-opencv/src/CMakeFiles/edit_cache.dir
+/home/orangepi/code/lcd-opencv/src/CMakeFiles/rebuild_cache.dir

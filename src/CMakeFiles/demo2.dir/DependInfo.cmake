@@ -1,19 +1,17 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ht/code/git_learn/lcd-opencv/src/lcd.cpp" "/home/ht/code/git_learn/lcd-opencv/src/CMakeFiles/demo2.dir/lcd.cpp.o"
-  "/home/ht/code/git_learn/lcd-opencv/src/lcd_init.cpp" "/home/ht/code/git_learn/lcd-opencv/src/CMakeFiles/demo2.dir/lcd_init.cpp.o"
-  "/home/ht/code/git_learn/lcd-opencv/src/main.cpp" "/home/ht/code/git_learn/lcd-opencv/src/CMakeFiles/demo2.dir/main.cpp.o"
-  "/home/ht/code/git_learn/lcd-opencv/src/socket.cpp" "/home/ht/code/git_learn/lcd-opencv/src/CMakeFiles/demo2.dir/socket.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "src/../inc"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/orangepi/code/lcd-opencv/src/lcd.cpp" "src/CMakeFiles/demo2.dir/lcd.cpp.o" "gcc" "src/CMakeFiles/demo2.dir/lcd.cpp.o.d"
+  "/home/orangepi/code/lcd-opencv/src/lcd_init.cpp" "src/CMakeFiles/demo2.dir/lcd_init.cpp.o" "gcc" "src/CMakeFiles/demo2.dir/lcd_init.cpp.o.d"
+  "/home/orangepi/code/lcd-opencv/src/main.cpp" "src/CMakeFiles/demo2.dir/main.cpp.o" "gcc" "src/CMakeFiles/demo2.dir/main.cpp.o.d"
+  "/home/orangepi/code/lcd-opencv/src/socket.cpp" "src/CMakeFiles/demo2.dir/socket.cpp.o" "gcc" "src/CMakeFiles/demo2.dir/socket.cpp.o.d"
   )
 
 # Targets to which this target links.
