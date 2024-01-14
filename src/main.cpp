@@ -87,11 +87,11 @@ int main(int argc, char **args)
     }
 	LCD_ShowPicture2(0,0,320,172,image2);
         // 等待一段时间，按键盘上的任意键退出循环
-        delay(10);
+        delay(1);
     }
 
     // 关闭窗口
-    cv::destroyWindow("Video");
+   // cv::destroyWindow("Video");
 
 
 
