@@ -35,7 +35,7 @@ int main(int argc, char **args)
 	LCD_Fill2(0,0,LCD_W,LCD_H,WHITE);
 	delay(100);
 
-    cv::VideoCapture cap("./test.mp4");
+    cv::VideoCapture cap("./avi.mp4");
     // 检查视频是否成功打开
     if (!cap.isOpened()) {
         std::cerr << "Error opening video file." << std::endl;
@@ -52,12 +52,34 @@ int main(int argc, char **args)
             break;
         }
 
+
+
+        cv::Mat grayImage;
+    cv::cvtColor(frame, grayImage, cv::COLOR_BGR2GRAY);
+
+    // 使用阈值将非黑色区域设为白色，以便找到边界
+    cv::Mat thresholded;
+    cv::threshold(grayImage, thresholded, 1, 255, cv::THRESH_BINARY);
+
+    // 寻找边界框
+    std::vector<std::vector<cv::Point>> contours;
+    cv::findContours(thresholded, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
+
+    // 找到包围整个图像的矩形边界框
+    cv::Rect boundingBox = cv::boundingRect(contours[0]);
+
+    // 裁剪图像，去掉边框
+    cv::Mat croppedImage = frame(boundingBox);
+
+
+
+
         // 在窗口中显示当前帧
         //cv::imshow("Video", frame);
 
     // 缩放图像为320x172
     cv::Mat resizedImage;
-    cv::resize(frame, resizedImage, cv::Size(320, 172));
+    cv::resize(croppedImage, resizedImage, cv::Size(320, 172),cv::INTER_CUBIC);
     //cv::imshow("Resized RGB565 Image", resizedImage);
     
     //转换为RGB565格式
@@ -86,8 +108,8 @@ int main(int argc, char **args)
         }
     }
 	LCD_ShowPicture2(0,0,320,172,image2);
-        // 等待一段时间，按键盘上的任意键退出循环
-        delay(1);
+        // 等待一段时间，
+        delay(0);
     }
 
     // 关闭窗口
