@@ -9,6 +9,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/demo2.dir/main.cpp.o.d"
   "CMakeFiles/demo2.dir/socket.cpp.o"
   "CMakeFiles/demo2.dir/socket.cpp.o.d"
+  "CMakeFiles/demo2.dir/thread_create_frame.cpp.o"
+  "CMakeFiles/demo2.dir/thread_create_frame.cpp.o.d"
+  "CMakeFiles/demo2.dir/thread_display.cpp.o"
+  "CMakeFiles/demo2.dir/thread_display.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

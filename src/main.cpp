@@ -11,10 +11,13 @@
 #include "pic.h"
 #include <unistd.h>
 #include "socket.hpp"
-#include "image.h"
+
 #include <fstream>
 #include <vector>
 #include "opencv2/opencv.hpp"
+#include "thread_display.hpp"
+#include "thread_create_frame.hpp"
+
 #define SPI_CHAN 4
 //#define IN_PIN 8
 uint8_t temp[4096];
@@ -35,186 +38,86 @@ int main(int argc, char **args)
 	LCD_Fill2(0,0,LCD_W,LCD_H,WHITE);
 	delay(100);
 
-    cv::VideoCapture cap("./avi.mp4");
-    // 检查视频是否成功打开
-    if (!cap.isOpened()) {
-        std::cerr << "Error opening video file." << std::endl;
-        return -1;
-    }
+    // 创建生产者和消费者线程
+    std::thread producerThread(create);
+    std::thread consumerThread(display);
+
+    // 等待线程完成
+    producerThread.join();
+    consumerThread.join();
     
     while (true) {
-        cv::Mat frame;
-        cap >> frame;  // 从视频捕获设备读取一帧
+//         cv::Mat frame;
+//         cap >> frame;  // 从视频捕获设备读取一帧
 
-        // 检查是否成功读取一帧
-        if (frame.empty()) {
-            std::cerr << "End of video" << std::endl;
-            break;
-        }
-
-
-
-        cv::Mat grayImage;
-    cv::cvtColor(frame, grayImage, cv::COLOR_BGR2GRAY);
-
-    // 使用阈值将非黑色区域设为白色，以便找到边界
-    cv::Mat thresholded;
-    cv::threshold(grayImage, thresholded, 1, 255, cv::THRESH_BINARY);
-
-    // 寻找边界框
-    std::vector<std::vector<cv::Point>> contours;
-    cv::findContours(thresholded, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
-
-    // 找到包围整个图像的矩形边界框
-    cv::Rect boundingBox = cv::boundingRect(contours[0]);
-
-    // 裁剪图像，去掉边框
-    cv::Mat croppedImage = frame(boundingBox);
+//         // 检查是否成功读取一帧
+//         if (frame.empty()) {
+//             std::cerr << "End of video" << std::endl;
+//             break;
+//         }
 
 
 
+//         cv::Mat grayImage;
+//     cv::cvtColor(frame, grayImage, cv::COLOR_BGR2GRAY);
 
-        // 在窗口中显示当前帧
-        //cv::imshow("Video", frame);
+//     // 使用阈值将非黑色区域设为白色，以便找到边界
+//     cv::Mat thresholded;
+//     cv::threshold(grayImage, thresholded, 1, 255, cv::THRESH_BINARY);
 
-    // 缩放图像为320x172
-    cv::Mat resizedImage;
-    cv::resize(croppedImage, resizedImage, cv::Size(320, 172),cv::INTER_CUBIC);
-    //cv::imshow("Resized RGB565 Image", resizedImage);
+//     // 寻找边界框
+//     std::vector<std::vector<cv::Point>> contours;
+//     cv::findContours(thresholded, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
+
+//     // 找到包围整个图像的矩形边界框
+//     cv::Rect boundingBox = cv::boundingRect(contours[0]);
+
+//     // 裁剪图像，去掉边框
+//     cv::Mat croppedImage = frame(boundingBox);
+
+
+
+
+//         // 在窗口中显示当前帧
+//         //cv::imshow("Video", frame);
+
+//     // 缩放图像为320x172
+//     cv::Mat resizedImage;
+//     cv::resize(croppedImage, resizedImage, cv::Size(320, 172),cv::INTER_CUBIC);
+//     //cv::imshow("Resized RGB565 Image", resizedImage);
     
-    //转换为RGB565格式
-    cv::Mat rgb565Image;
-    cv::cvtColor(resizedImage, rgb565Image, cv::COLOR_BGR2BGR565);
-    // 获取图像的宽度和高度
-    int width = rgb565Image.cols;
-    int height = rgb565Image.rows;
-   // cout<<"wideth:"<<width<<endl;
-   // cout<<"height:"<<height<<endl;
-    //int width = imageWidth;
-    //int height = imageHeight;
-    // 遍历图像像素并写入数组
-    for (int y = 0; y < height; y++) {
-        for (int x = 0; x < width; x++) {
-            // 获取RGB565值
-            uint16_t rgb565Value = rgb565Image.at<uint16_t>(y, x);
+//     //转换为RGB565格式
+//     cv::Mat rgb565Image;
+//     cv::cvtColor(resizedImage, rgb565Image, cv::COLOR_BGR2BGR565);
+//     // 获取图像的宽度和高度
+//     int width = rgb565Image.cols;
+//     int height = rgb565Image.rows;
+//    // cout<<"wideth:"<<width<<endl;
+//    // cout<<"height:"<<height<<endl;
+//     //int width = imageWidth;
+//     //int height = imageHeight;
+//     // 遍历图像像素并写入数组
+//     for (int y = 0; y < height; y++) {
+//         for (int x = 0; x < width; x++) {
+//             // 获取RGB565值
+//             uint16_t rgb565Value = rgb565Image.at<uint16_t>(y, x);
 
-            // 分开高位和低位，并写入数组
-            uint8_t highByte = (rgb565Value >> 8) & 0xFF;
-            uint8_t lowByte = rgb565Value & 0xFF;
-            image2[(y * width + x) * 2]=highByte;
-            image2[(y * width + x) * 2 + 1]=lowByte;
-            // outputArray << "0X" << std::hex << std::uppercase << static_cast<int>(highByte) << ",";
-            // outputArray << "0X" << std::hex << std::uppercase << static_cast<int>(lowByte) << ",";
-        }
-    }
-	LCD_ShowPicture2(0,0,320,172,image2);
-        // 等待一段时间，
-        delay(0);
-    }
+//             // 分开高位和低位，并写入数组
+//             uint8_t highByte = (rgb565Value >> 8) & 0xFF;
+//             uint8_t lowByte = rgb565Value & 0xFF;
+//             image2[(y * width + x) * 2]=highByte;
+//             image2[(y * width + x) * 2 + 1]=lowByte;
+//             // outputArray << "0X" << std::hex << std::uppercase << static_cast<int>(highByte) << ",";
+//             // outputArray << "0X" << std::hex << std::uppercase << static_cast<int>(lowByte) << ",";
+//         }
+//     }
+// 	LCD_ShowPicture2(0,0,320,172,image2);
+//         // 等待一段时间，
+//         delay(0);
+//     }
 
-    // 关闭窗口
-   // cv::destroyWindow("Video");
-
-
-
-
-    // cv::Mat originalImage = cv::imread("./wallpaper.jpg");
-
-    // if (originalImage.empty()) {
-    //     std::cerr << "Error loading image." << std::endl;
-    //     return (-1);
-    // }
-
-    // // 缩放图像为320x172
-    // cv::Mat resizedImage;
-    // cv::resize(originalImage, resizedImage, cv::Size(320, 172));
-    // //cv::imshow("Resized RGB565 Image", resizedImage);
-    
-    // //转换为RGB565格式
-    // cv::Mat rgb565Image;
-    // cv::cvtColor(resizedImage, rgb565Image, cv::COLOR_BGR2BGR565);
-    // // 获取图像的宽度和高度
-    // int width = rgb565Image.cols;
-    // int height = rgb565Image.rows;
-    // cout<<"wideth:"<<width<<endl;
-    // cout<<"height:"<<height<<endl;
-    // //int width = imageWidth;
-    // //int height = imageHeight;
-    // // 遍历图像像素并写入数组
-    // for (int y = 0; y < height; y++) {
-    //     for (int x = 0; x < width; x++) {
-    //         // 获取RGB565值
-    //         uint16_t rgb565Value = rgb565Image.at<uint16_t>(y, x);
-
-    //         // 分开高位和低位，并写入数组
-    //         uint8_t highByte = (rgb565Value >> 8) & 0xFF;
-    //         uint8_t lowByte = rgb565Value & 0xFF;
-    //         image2[(y * width + x) * 2]=highByte;
-    //         image2[(y * width + x) * 2 + 1]=lowByte;
-    //         // outputArray << "0X" << std::hex << std::uppercase << static_cast<int>(highByte) << ",";
-    //         // outputArray << "0X" << std::hex << std::uppercase << static_cast<int>(lowByte) << ",";
-    //     }
-    // }
-	// LCD_ShowPicture2(0,0,320,172,image2);
-	// delay(200);
-	// const char* filename = "./image.h";
-
-    // // 打开文件
-    // std::ifstream file(filename);
-
-    // if (!file.is_open()) {
-    //     std::cerr << "Error opening file: " << filename << std::endl;
-    //     return -1;
-    // }
-
-    // // 寻找 "const uint8_t image[]" 字符串
-    // std::string line;
-    // while (std::getline(file, line)) {
-    //     if (line.find("const uint8_t image[55040] = {") != std::string::npos) {
-    //         break;
-    //     }
-    // }
-
-    // // 读取数组内容并存储到 uint8_t 数组
-    // std::vector<uint8_t> imageArray;
-    // while (std::getline(file, line) && line.find("};") == std::string::npos) {
-    //     size_t start = line.find("0X");
-    //     while (start != std::string::npos) {
-    //         // 从字符串中提取十六进制数
-    //         std::string hexValue = line.substr(start, 4);
-    //         imageArray.push_back(static_cast<uint8_t>(std::stoi(hexValue, nullptr, 16)));
-    //         start = line.find("0X", start + 4);
-    //     }
-    // }
-
-    // // 关闭文件
-    // file.close();
-	// LCD_ShowPicture2(0,0,320,172,imageArray.data());
-	// int i=40;
-	// 创建一个线程用于处理客户端连接和接收数据
-    //std::thread serverThread(serverThreadFunction);
-
-    // 主线程可以执行其他操作
-
-    // 等待服务器线程结束（实际上这里永远不会结束，因为 serverThreadFunction 包含一个无限循环）
-    //serverThread.join();
-
-	// std::cout << "start fill2" << std::endl;
-	// LCD_Fill2(0,0,LCD_W,LCD_H,WHITE);
-	// delay(500);
-	// LCD_Fill2(0,0,LCD_W,LCD_H,RED);
-	// delay(500);
-	// LCD_Fill2(0,0,LCD_W,LCD_H,GREEN);
-	// delay(500);
-	// LCD_Fill2(0,0,LCD_W,LCD_H,BLUE);
-	// delay(500);
-	// LCD_Fill2(0,0,LCD_W,LCD_H,WHITE);
-	// delay(500);
-	// std::cout << "fill2 end" << std::endl;
-	// LCD_Fill2(0,0,LCD_W,LCD_H,WHITE);
-	
-	// wiringPiSPIDataRW(SPI_CHAN,temp,sizeof(temp));
-	// printf("temp:%s",temp);
+    sleep(1);
 	return 0;
-}
+        }
 // aarch64-linux-gnu-g++-10
+}

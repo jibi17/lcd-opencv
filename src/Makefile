@@ -226,6 +226,54 @@ socket.cpp.s:
 	cd /home/orangepi/code/lcd-opencv && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/socket.cpp.s
 .PHONY : socket.cpp.s
 
+thread_create_frame.o: thread_create_frame.cpp.o
+.PHONY : thread_create_frame.o
+
+# target to build an object file
+thread_create_frame.cpp.o:
+	cd /home/orangepi/code/lcd-opencv && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/thread_create_frame.cpp.o
+.PHONY : thread_create_frame.cpp.o
+
+thread_create_frame.i: thread_create_frame.cpp.i
+.PHONY : thread_create_frame.i
+
+# target to preprocess a source file
+thread_create_frame.cpp.i:
+	cd /home/orangepi/code/lcd-opencv && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/thread_create_frame.cpp.i
+.PHONY : thread_create_frame.cpp.i
+
+thread_create_frame.s: thread_create_frame.cpp.s
+.PHONY : thread_create_frame.s
+
+# target to generate assembly for a file
+thread_create_frame.cpp.s:
+	cd /home/orangepi/code/lcd-opencv && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/thread_create_frame.cpp.s
+.PHONY : thread_create_frame.cpp.s
+
+thread_display.o: thread_display.cpp.o
+.PHONY : thread_display.o
+
+# target to build an object file
+thread_display.cpp.o:
+	cd /home/orangepi/code/lcd-opencv && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/thread_display.cpp.o
+.PHONY : thread_display.cpp.o
+
+thread_display.i: thread_display.cpp.i
+.PHONY : thread_display.i
+
+# target to preprocess a source file
+thread_display.cpp.i:
+	cd /home/orangepi/code/lcd-opencv && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/thread_display.cpp.i
+.PHONY : thread_display.cpp.i
+
+thread_display.s: thread_display.cpp.s
+.PHONY : thread_display.s
+
+# target to generate assembly for a file
+thread_display.cpp.s:
+	cd /home/orangepi/code/lcd-opencv && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/demo2.dir/build.make src/CMakeFiles/demo2.dir/thread_display.cpp.s
+.PHONY : thread_display.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -247,6 +295,12 @@ help:
 	@echo "... socket.o"
 	@echo "... socket.i"
 	@echo "... socket.s"
+	@echo "... thread_create_frame.o"
+	@echo "... thread_create_frame.i"
+	@echo "... thread_create_frame.s"
+	@echo "... thread_display.o"
+	@echo "... thread_display.i"
+	@echo "... thread_display.s"
 .PHONY : help
 
 

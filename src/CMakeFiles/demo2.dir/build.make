@@ -125,12 +125,42 @@ src/CMakeFiles/demo2.dir/socket.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo2.dir/socket.cpp.s"
 	cd /home/orangepi/code/lcd-opencv/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/orangepi/code/lcd-opencv/src/socket.cpp -o CMakeFiles/demo2.dir/socket.cpp.s
 
+src/CMakeFiles/demo2.dir/thread_create_frame.cpp.o: src/CMakeFiles/demo2.dir/flags.make
+src/CMakeFiles/demo2.dir/thread_create_frame.cpp.o: src/thread_create_frame.cpp
+src/CMakeFiles/demo2.dir/thread_create_frame.cpp.o: src/CMakeFiles/demo2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/orangepi/code/lcd-opencv/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/demo2.dir/thread_create_frame.cpp.o"
+	cd /home/orangepi/code/lcd-opencv/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/demo2.dir/thread_create_frame.cpp.o -MF CMakeFiles/demo2.dir/thread_create_frame.cpp.o.d -o CMakeFiles/demo2.dir/thread_create_frame.cpp.o -c /home/orangepi/code/lcd-opencv/src/thread_create_frame.cpp
+
+src/CMakeFiles/demo2.dir/thread_create_frame.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/demo2.dir/thread_create_frame.cpp.i"
+	cd /home/orangepi/code/lcd-opencv/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/orangepi/code/lcd-opencv/src/thread_create_frame.cpp > CMakeFiles/demo2.dir/thread_create_frame.cpp.i
+
+src/CMakeFiles/demo2.dir/thread_create_frame.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo2.dir/thread_create_frame.cpp.s"
+	cd /home/orangepi/code/lcd-opencv/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/orangepi/code/lcd-opencv/src/thread_create_frame.cpp -o CMakeFiles/demo2.dir/thread_create_frame.cpp.s
+
+src/CMakeFiles/demo2.dir/thread_display.cpp.o: src/CMakeFiles/demo2.dir/flags.make
+src/CMakeFiles/demo2.dir/thread_display.cpp.o: src/thread_display.cpp
+src/CMakeFiles/demo2.dir/thread_display.cpp.o: src/CMakeFiles/demo2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/orangepi/code/lcd-opencv/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/demo2.dir/thread_display.cpp.o"
+	cd /home/orangepi/code/lcd-opencv/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/demo2.dir/thread_display.cpp.o -MF CMakeFiles/demo2.dir/thread_display.cpp.o.d -o CMakeFiles/demo2.dir/thread_display.cpp.o -c /home/orangepi/code/lcd-opencv/src/thread_display.cpp
+
+src/CMakeFiles/demo2.dir/thread_display.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/demo2.dir/thread_display.cpp.i"
+	cd /home/orangepi/code/lcd-opencv/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/orangepi/code/lcd-opencv/src/thread_display.cpp > CMakeFiles/demo2.dir/thread_display.cpp.i
+
+src/CMakeFiles/demo2.dir/thread_display.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo2.dir/thread_display.cpp.s"
+	cd /home/orangepi/code/lcd-opencv/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/orangepi/code/lcd-opencv/src/thread_display.cpp -o CMakeFiles/demo2.dir/thread_display.cpp.s
+
 # Object files for target demo2
 demo2_OBJECTS = \
 "CMakeFiles/demo2.dir/lcd.cpp.o" \
 "CMakeFiles/demo2.dir/lcd_init.cpp.o" \
 "CMakeFiles/demo2.dir/main.cpp.o" \
-"CMakeFiles/demo2.dir/socket.cpp.o"
+"CMakeFiles/demo2.dir/socket.cpp.o" \
+"CMakeFiles/demo2.dir/thread_create_frame.cpp.o" \
+"CMakeFiles/demo2.dir/thread_display.cpp.o"
 
 # External object files for target demo2
 demo2_EXTERNAL_OBJECTS =
@@ -139,6 +169,8 @@ demo2: src/CMakeFiles/demo2.dir/lcd.cpp.o
 demo2: src/CMakeFiles/demo2.dir/lcd_init.cpp.o
 demo2: src/CMakeFiles/demo2.dir/main.cpp.o
 demo2: src/CMakeFiles/demo2.dir/socket.cpp.o
+demo2: src/CMakeFiles/demo2.dir/thread_create_frame.cpp.o
+demo2: src/CMakeFiles/demo2.dir/thread_display.cpp.o
 demo2: src/CMakeFiles/demo2.dir/build.make
 demo2: /usr/local/lib/libopencv_gapi.so.4.5.5
 demo2: /usr/local/lib/libopencv_highgui.so.4.5.5
@@ -156,7 +188,7 @@ demo2: /usr/local/lib/libopencv_flann.so.4.5.5
 demo2: /usr/local/lib/libopencv_imgproc.so.4.5.5
 demo2: /usr/local/lib/libopencv_core.so.4.5.5
 demo2: src/CMakeFiles/demo2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/orangepi/code/lcd-opencv/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../demo2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/orangepi/code/lcd-opencv/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ../demo2"
 	cd /home/orangepi/code/lcd-opencv/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/demo2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
