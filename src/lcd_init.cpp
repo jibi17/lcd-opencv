@@ -266,7 +266,7 @@ void spi_send_frame(u8 *data,int sizeOfData)
 		memmove(temp,data+i,sizeof(temp));
 		if(wiringPiSPIDataRW(SPI_CHAN,temp,sizeof(temp))==-1)
 		{
-		 	printf ("SPI failure:1 \n") ;
+		 	printf ("SPI failure: %s\n", strerror (errno)) ;
 		}
 		else
 		{

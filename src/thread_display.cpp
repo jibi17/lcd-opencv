@@ -24,7 +24,8 @@
 void display()
 {
     while(1){
-        
+
+
         {std::unique_lock<std::mutex> lock(mtx);
         // 使用条件变量等待，直到队列非空或达到一定大小
         var.wait(lock, [] { return !imageQueue.empty() || imageQueue.size() >= QUEUE_SIZE; });
@@ -41,11 +42,17 @@ void display()
         LCD_ShowPicture2(0,0,320,172,imageData);
         delete[] imageData;
         }
-        delay(0);
+        //delay(0);
         
         var.notify_one();
         //std::cout<<"进入一次消费者"<<std::endl;
+   
+
     }
      
-
+    return;
 }
+
+
+
+

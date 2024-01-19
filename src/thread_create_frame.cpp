@@ -24,7 +24,7 @@ void create()
 {
     // Use the pointer array (image2) as needed
     //打开视频
-    cv::VideoCapture cap("./avi.mp4");
+    cv::VideoCapture cap("./test.mp4");
     // 检查视频是否成功打开
     if (!cap.isOpened()) {
         std::cerr << "Error opening video file." << std::endl;
@@ -46,30 +46,43 @@ void create()
 
 
 
-        cv::Mat grayImage;
-        cv::cvtColor(frame, grayImage, cv::COLOR_BGR2GRAY);
+        // cv::Mat grayImage;
+        // cv::cvtColor(frame, grayImage, cv::COLOR_BGR2GRAY);
 
-        // 使用阈值将非黑色区域设为白色，以便找到边界
-        cv::Mat thresholded;
-        cv::threshold(grayImage, thresholded, 1, 255, cv::THRESH_BINARY);
+        // // 使用阈值将非黑色区域设为白色，以便找到边界
+        // cv::Mat thresholded;
+        // cv::threshold(grayImage, thresholded, 1, 255, cv::THRESH_BINARY);
 
-        // 寻找边界框
-        std::vector<std::vector<cv::Point>> contours;
-        cv::findContours(thresholded, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
+        // // 寻找边界框
+        // std::vector<std::vector<cv::Point>> contours;
+        // cv::findContours(thresholded, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
 
-        // 找到包围整个图像的矩形边界框
-        cv::Rect boundingBox = cv::boundingRect(contours[0]);
+        // // 找到包围整个图像的矩形边界框
+        // cv::Rect boundingBox = cv::boundingRect(contours[0]);
 
-        // 裁剪图像，去掉边框
-        cv::Mat croppedImage = frame(boundingBox);
+        // // 裁剪图像，去掉边框
+        // cv::Mat croppedImage = frame(boundingBox);
 
+    // cv::Mat grayImage;
+    // cv::cvtColor(frame, grayImage, cv::COLOR_BGR2GRAY);
 
+    // // 使用阈值将非黑色区域设为白色，以便找到边界
+    // cv::Mat thresholded;
+    // cv::threshold(grayImage, thresholded, 1, 255, cv::THRESH_BINARY);
+
+    // // 寻找边界框
+    // std::vector<std::vector<cv::Point>> contours;
+    // cv::findContours(thresholded, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
+    // cv::Rect boundingBox = cv::boundingRect(contours[0]);
+    // // 裁剪图像，去掉边框
+    //  cv::Mat croppedImage = frame(boundingBox);
+   
 
 
 
         // 缩放图像为320x172
         cv::Mat resizedImage;
-        cv::resize(croppedImage, resizedImage, cv::Size(320, 172),cv::INTER_CUBIC);
+        cv::resize(frame, resizedImage, cv::Size(320, 172),cv::INTER_CUBIC);
         //cv::imshow("Resized RGB565 Image", resizedImage);
         
         //转换为RGB565格式
@@ -111,6 +124,6 @@ void create()
 
 
     }
-
+    return;
 
 }
